@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}post_detail.html{% endblock %}
+
+{% block content %}
+<div id="content">
+
+<h2>{{ object.title }}</h2>
+
+<p class="other_posts">
+    {% if object.get_previous_by_modify_date %}
+    <a href="{{ object.get_previous_post.get_absolute_url }}" title="View previous post">&laquo;--{{ object.get_previous_post }}</a>
+    {% endif %}
+
+    {% if object.get_next_by_modify_date %}
+    | <a href="{{ object.get_next_post.get_absolute_url }}" title="View next post">{{ object.get_next_post }}--&raquo;</a>
+    {% endif %}
+</p>
+
+<p class="date">{{ object.modify_date|date:"j F Y" }}</p>
+<br/>
+
+<div class="body">
+    {{ object.content|linebreaks }}
+</div>
+
+
+<hr>
+<a class="btn btn-default" href="{% url 'blog:add_comment_to_post' slug=post.slug %}">Add comment</a>
+{% for comment in post.comments.all %}
+    <div class="comment">
+        <div class="date">{{ comment.create_date }}</div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+{% empty %}
+    <p>No comments here yet :</p>
+{% endfor %}
+</div>
+{% endblock content%}

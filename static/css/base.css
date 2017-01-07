@@ -1,0 +1,88 @@
+body {
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* PAGE STRUCTURE */
+
+
+div#top {
+    display: table;
+    height: 50px;
+    width:100%;
+    display: table;
+    width: 100%;
+    position: absolute;
+    border-spacing: 0px 0px;
+    border-bottom: 3px solid #ccc;
+
+
+}
+.title{
+   display: table-cell;
+   text-align: left;
+   font-weight: bold;
+
+
+}
+
+/* MENU */
+/*link, visited 때 색깔 설정*/
+
+.menu a:link, div#menu a:visited{
+    color: #36c;
+}
+/*cusor를 갖다 놓았을 때 색깔 설정 */
+.menu a:hover{
+    color: pink;
+    text-decoration: none;
+}
+
+
+.menu {
+    display: table-cell;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    vertical-align: middle;
+}
+
+
+div#content {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    right: 50px;
+    color: black;
+}
+
+div#footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    right: 50px;
+    height: 30px;
+    border-top:1px solid #ccc;
+}
+
+
+/* LINK */
+/*내 링크에 대한 속성*/
+a:link{
+    color: black;
+    text-decoration: none; /*문장 밑줄 등등*/
+}
+a:visited{
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+
+

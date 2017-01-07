@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}GLAY's HOME{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}
+
+<div id="introduce">
+    <h2 style="bold">Introduce Blog</h2>
+    <p>안녕하세요<br/>서비스 기획부터  django를 이용한 개발까지의 강의를 위한 블로그입니다.</p>
+</div>
+
+<div id="post_latest">
+    <h1>The latest List</h1>
+    {% for post in posts %}
+    <a class="post" href='{{ post.get_absolute_url }}'>{{ post.title }}</a>
+    {{ post.modify_date|date:"N d, Y" }}
+    <br/>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div id="footer">
+    &copy; JJS 2016
+</div>
+{% endblock footer %}

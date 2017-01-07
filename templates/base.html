@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>{% block title %}GLAY Django programing{% endblock %}</title>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+
+</head>
+
+<body>
+ <div id="top">
+     <h1 class="title">GLAY's django programing</h1>
+     <li class="menu"><a href="{% url 'home' %}">Home</a></li>
+     <li class="menu"><a href="{% url 'blog:index' %}">Blog</a></li>
+ </div>
+
+{% block content %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+</body>
+</html>
