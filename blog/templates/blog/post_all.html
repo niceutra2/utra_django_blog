@@ -9,7 +9,7 @@
     {% for post in posts %}
         <h2><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h2>
         {{ post.modify_date|date:"N d, Y" }}
-        <a href='{{ post.get_absolute_url }}'>Comments: {{ post.comments.count }}</a>
+        <a href='{{ post.get_absolute_url }}'>Comments: {{ post.approved_comments.count }}</a>
     {% endfor %}
 
     <br/>
