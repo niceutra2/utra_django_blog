@@ -3,7 +3,7 @@ from django.views.generic import ListView
 
 from blog.models import Post
 from django.shortcuts import render, redirect
-from blog.form import CommentForm
+#from blog.form import CommentForm
 from blog.models import Post
 
 class HomeView(ListView):

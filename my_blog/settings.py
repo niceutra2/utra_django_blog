@@ -39,7 +39,22 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'tagging.apps.TaggingConfig',
+    'ckeditor',
+    'ckeditor_uploader',
+    'disqus',
+    'django.contrib.sites',
+
 ]
+
+##disqus
+DISQUS_WEBSITE_SHORTNAME = 'django-glay'
+SITE_ID = 1
+
+##ckeditor
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+##
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

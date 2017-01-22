@@ -25,17 +25,11 @@
 </div>
 
 
-<hr>
-<a class="btn btn-default" href="{% url 'blog:add_comment_to_post' post.slug %}">Add comment</a>
-    {% for comment in post.comments.all %}
-    <div class="comment">
-        <div class="date">{{ comment.create_date }}</div>
-        <strong>{{ comment.author }}</strong>
-        <p>{{ comment.text|linebreaks }}</p>
-    </div>
+<div>
+    {% load disqus_tags %}
+    {% disqus_show_comments %}
+</div>
 
-{% empty %}
-    <p>No comments here yet :</p>
-{% endfor %}
+
 </div>
 {% endblock content%}
