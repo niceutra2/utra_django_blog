@@ -2,7 +2,7 @@
 <html lang="ko">
 
 <head>
-<title>{% block title %}GLAY Django programing{% endblock %}</title>
+<title>{% block title %}Second life{% endblock %}</title>
 
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" />
@@ -12,8 +12,9 @@
 
 <body>
  <div id="top">
-     <h1 class="title">GLAY's django programing</h1>
+     <h1 class="title">Second life's Blog</h1>
      <li class="menu"><a href="{% url 'home' %}">Home</a></li>
+     <li class="menu"><a href="{% url 'introduce' %}">Introduce</a></li>
      <li class="menu"><a href="{% url 'blog:index' %}">Blog</a></li>
  </div>
 
