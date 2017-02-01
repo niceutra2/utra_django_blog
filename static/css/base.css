@@ -11,8 +11,9 @@ div#top {
     height: 50px;
     width:100%;
     display: table;
-    width: 100%;
     position: absolute;
+    background-color : #BD081C;
+
     border-spacing: 0px 0px;
     border-bottom: 3px solid #ccc;
 
@@ -20,8 +21,9 @@ div#top {
 }
 .title{
    display: table-cell;
-   text-align: left;
+   padding : 10px;
    font-weight: bold;
+   color : white;
 
 
 }
@@ -29,12 +31,12 @@ div#top {
 /* MENU */
 /*link, visited 때 색깔 설정*/
 
-.menu a:link, div#menu a:visited{
-    color: #36c;
+.menu a:link, .menu a:visited{
+    color: white;
 }
 /*cusor를 갖다 놓았을 때 색깔 설정 */
 .menu a:hover{
-    color: pink;
+    color: black;
     text-decoration: none;
 }
 
@@ -45,6 +47,7 @@ div#top {
     font-weight: bold;
     font-size: 17px;
     vertical-align: middle;
+
 }
 
 

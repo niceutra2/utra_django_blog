@@ -1,18 +1,7 @@
-
-
-div#introduce {
-    position: absolute;
-    top: 80px;
-    left: 30px;
-    background: white;
-    padding: 5px 0 1px 0;
-    text-align: left;
-}
-
-div#post_latest {
+div#latest_post {
     position: absolute;
     background: white;
-    top: 300px;
+    top: 450px;
     left: 30px;
     font-size: 16px;
 }
@@ -21,6 +10,7 @@ div#post_latest {
 .post{
     font-size: 35px;
 }
+
 .date{
     position: relative;
     font-size: 16px;
