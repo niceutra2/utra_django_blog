@@ -9,6 +9,9 @@ from blog.models import Post
 from django.shortcuts import render, redirect
 
 
+
+
+
 class PostLV(ListView) :
     model = Post
     template_name = 'blog/post_all.html'
@@ -19,4 +22,3 @@ class PostLV(ListView) :
 class PostDV(DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
-
