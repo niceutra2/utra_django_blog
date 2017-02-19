@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'disqus',
     'django.contrib.sites',
+    'bootstrap3',
 
 ]
 

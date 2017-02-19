@@ -3,17 +3,18 @@
 {% block title %}GLAY's blog{% endblock %}
 
 {% block content %}
-<div id="content">
-    <h1>Post List</h1>
+<div class="container">
+    <div id="content">
+        <h1>Post List</h1>
 
-    {% for post in posts %}
-        <h2><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h2>
-        {{ post.modify_date|date:"N d, Y" }}
-        <a href='{{ post.get_absolute_url }}'>Comments: {{ post.approved_comments.count }}</a>
-    {% endfor %}
+        {% for post in posts %}
+            <h2><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h2>
+            {{ post.modify_date|date:"N d, Y" }}
+            <a href='{{ post.get_absolute_url }}'>Comments: {{ post.approved_comments.count }}</a>
+        {% endfor %}
 
-    <br/>
-<div>
+      <br/>
+    <div>
     <span>
         {% if page_obj.has_previous %}
             <a href="?page={{ page_obj.previous_page_number }}">PreviousPage</a>
@@ -30,10 +31,4 @@
 
 </div>
 {% endblock content %}
-
-{% block footer %}
-<div id="footer">
-    &copy; JJS 2016
-</div>
-{% endblock footer %}
 

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Second life Home{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+<div id="door">
+    <div class="thumbnail"></div>
+    <img class="img-responsive" src="static/img/django.jpg" >
+
+</div>
+<div id="latest_post">
+    <h1>The latest Post</h1>
+    {% for post in posts %}
+    <a class="post" href='{{ post.get_absolute_url }}'>{{ post.title }}</a>
+    <a class="date">{{ post.modify_date|date:"N d, Y" }}</a>
+    <br/>
+    {% endfor %}
+</div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div id="footer">
+    &copy; Second life 2016
+</div>
+{% endblock footer %}

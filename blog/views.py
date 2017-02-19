@@ -8,17 +8,12 @@ from django.shortcuts import render, redirect
 from blog.models import Post
 from django.shortcuts import render, redirect
 
-
-
-
-
 class PostLV(ListView) :
     model = Post
     template_name = 'blog/post_all.html'
     context_object_name = 'posts'
     paginate_by = 10
 
-
-class PostDV(DetailView):
+class Post_DV(DetailView):
     model = Post
-    template_name = 'blog/post_detail.html'
+    template_name = 'blog/index.html'

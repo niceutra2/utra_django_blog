@@ -32,7 +32,7 @@ div#top {
 /*link, visited 때 색깔 설정*/
 
 .menu a:link, .menu a:visited{
-    color: white;
+    color: black;
 }
 /*cusor를 갖다 놓았을 때 색깔 설정 */
 .menu a:hover{

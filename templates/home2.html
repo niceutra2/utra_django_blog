@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>미래를 준비합시다.</h1>
+              <p>
+                기대 수명 100세 인생에 30년 가까이를 배우고 그걸로 20년 동안 돈을 법니다.</br>
+                그 20년 동안 번 돈으로 남은 50년을 살기에는 부족합니다.</br>
+                결국 인생에 한 번은 창업을 해야 하고 지금부터 준비해야 합니다.</br>
+                즐겁게 일 할 수 있는 나만의 평생 직업을 만들어야 합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>창업은 누구나 할 수 있습니다.</h1>
+              <p>
+                 돈도 없고 사람도 없지만, 걱정 마세요. 혼자 하면 됩니다. 내가 아는 것, 내가 좋아하는 것으로부터 아이디어를 찾고 할 수 혼자서
+                 할 수 있는 것부터 하면 됩니다. 그렇게 차근차근 앞으로 나아가는 겁니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>실패를 두려워 하지 마세요.</h1>
+              <p>
+                 모든 창업은 한 번에 성공하지 않습니다. 많은 실패가 쌓여 경험을 만들고 그 경험이 성공을 만드는 것입니다.
+                 아무것도 하지 않는 사람이 정말 실패자입니다. 우리의 인생은 도전입니다. 그러니 두려워하지 말고 도전하세요.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>
+            아이디어는 스토리가 됩니다.
+          </h2>
+          <p>
+            당신의 생각을 정리하고 시장을 분석하여 어떠한 서비스로 만들지를 기획합니다.
+          </p>
+          <p><a class="btn btn-default" href="{% url 'blog:index' %}" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>
+            아이디어 설계도를 만듭니다.
+          </h2>
+          <p>
+            당신의 생각을 구체적으로, 자세하게 만들고 발전시키는 방법을 알려드립니다.
+          </p>
+          <p><a class="btn btn-default" href="{% url 'blog:index' %}" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>
+            아이디어는 현실이 됩니다.
+          </h2>
+          <p>
+            설계도를 바탕으로 직접 구현하고 서비스를 실현합니다.
+          </p>
+          <p><a class="btn btn-default" href="{% url 'blog:index' %}" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p> &copy; Second life 2017 &middot; <a href="{% url 'home' %}">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    {% endblock %}
+  </body>
+</html>
