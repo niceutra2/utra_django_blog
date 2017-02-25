@@ -32,25 +32,5 @@ class Post(models.Model):
         return self.get_next_by_modify_date()
 
 
-"""
-class Comment(models.Model):
-    post = models.ForeignKey('Post', related_name='comments')
-    author = models.CharField(max_length=200)
-    text = models.TextField()
-    password = models.CharField(max_length=50)
-    create_date = models.DateTimeField('Create Date', auto_now_add=True)
-    modify_date = models.DateTimeField('Modify Date', auto_now=True)
 
-
-    class Meta:
-        verbose_name = 'comment'
-        verbose_name_plural = 'comments'
-        db_table = 'my_comment'
-
-    def __str__(self):
-        return self.text
-
-    def get_absolute_url(self):
-       return reverse('blog:add_comment_to_post', args=(self.slug,))
-"""
 

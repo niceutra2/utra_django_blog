@@ -68,39 +68,28 @@
     <div class="container">
       <div class="blog-header">
 
-        <h1 class="blog-title">{{ object.title }}</h1>
-        <p class="lead blog-description">{{ object.modify_date|date:"j F Y" }}</p>
+        <h1 class="blog-title">Post list</h1>
+        <p class="lead blog-description">블로그를 만들어봅시다.</p>
       </div>
 
       <div class="row">
+
         <div class="col-sm-8 blog-main">
+
+
           <div class="blog-post">
-                {{ object.content|safe }}
+                {% for post in posts %}
+                <h2 class="blog-post-title"><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h2>
+                <p class="blog-post-meta">{{ post.modify_date|date:"N d, Y" }}</p>
+                {% endfor %}
           </div><!-- /.blog-post -->
-
-          <nav>
-            <ul class="pager">
-              {% if object.get_previous_by_modify_date %}
-              <li><a href="{{ object.get_previous_post.get_absolute_url }}">Previous</a></li>
-              {% endif %}
-              {% if object.get_next_by_modify_date %}
-              <li><a href="{{ object.get_next_post.get_absolute_url }}">Next</a></li>
-              {% endif %}
-            </ul>
-          </nav>
-            <div>
-                {% load disqus_tags %}
-                {% disqus_show_comments %}
-            </div>
-
         </div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>당신만의 블로그를 만들어보세요.</p>
+            <p>Django는 빠르고 쉽게 만들 수 있습니다. Instagram, Pinterest도 Django로 만들어 졌고, Django는 세계적으로 인기있는 Framework입니다.</p>
           </div>
-
         </div><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->

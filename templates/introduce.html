@@ -1,30 +1,120 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static "img/startup.png" %}">
 
-{% block title %}Second life's Introduce{% endblock %}
+    <title>Blog Template for Bootstrap</title>
 
-{% block content %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "dist/css/bootstrap.min.css" %}"rel="stylesheet">
 
-<div id="content">
-    <h2 style="bold">Who we are?</h2>
-    <p>
-        안녕하세요.
-        Second life입니다.
-        두 명의 개발자로 이루어져 있으며,
-        J군은 Second life의 기획 및 개발,
-        K군은 개발을 담당하고 있습니다.
-    </p>
-    <h2 style="bold">Why is second life?</h2>
-    <p>
-        직장이든 어떤 한 일을 하시고 계시든 간에 인생에서 한 번은 창업은 하게 될 것이고
-        창업은 당신의 인생을 좀 더 나은 삶으로 이끌 수 있을 것입니다.
-        창업은 당신의 새로운 출발, 즉 Second life로 이어질 것입니다.
-        그렇기에 Second life는 혼자서도 아이디어를 어떻게 다듬고 기획하여 구체화 시키는 과정에 도움이 되고자 합니다.
-    </p>
-</div>
-{% endblock content %}
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{% static "assets/css/ie10-viewport-bug-workaround.css" %}"rel="stylesheet">
 
-{% block footer %}
-<div id="footer">
-    &copy; Second life 2016
-</div>
-{% endblock footer %}
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/blog.css" %}" rel="stylesheet">
+
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static "css/blog.css" %}" />
+<body>
+ <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{% url 'home' %}">Second life</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'introduce' %}">Introduce</a></li>
+                <li><a href="{% url 'blog:index' %}">Post</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+    <div class="container">
+      <div class="blog-header">
+
+        <h2 class="blog-title">Who we are?</h2>
+
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          <div class="blog-post">
+             안녕하세요.</br>
+             Second life입니다.</br>
+             두 명의 개발자로 이루어져 있으며,</br>
+             J군은 Second life의 기획 및 개발,</br>
+             K군은 개발을 담당하고 있습니다.</br>
+          </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->
+
+      </div><!-- /.row -->
+           <div class="blog-header">
+
+        <h2 class="blog-title">Who we are?</h2>
+
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          <div class="blog-post">
+             직장이든 어떤 한 일을 하시고 계시든 간에 인생에서 한 번은 창업은 하게 될 것이고</br>
+             창업은 당신의 인생을 좀 더 나은 삶으로 이끌 수 있을 것입니다.</br>
+             창업은 당신의 새로운 출발, 즉 Second life로 이어질 것입니다.</br>
+             그렇기에 Second life는 혼자서도 아이디어를 어떻게 다듬고 기획하여 구체화 시키는 과정에 도움이 되고자 합니다.</br>
+          </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p> &copy; Second life 2017 </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static "/assets/js/vendor/jquery.min.js" %}"><\/script>')</script>
+    <script src="{% static "dist/js/bootstrap.min.js" %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static "/assets/js/ie10-viewport-bug-workaround.js" %}"></script>
+
+  </body>
+

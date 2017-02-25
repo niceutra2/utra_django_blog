@@ -11,5 +11,5 @@ class HomeView(ListView):
     context_object_name = 'posts'
     paginate_by = 4
 
-def Introduce(request):
+def introduce(request):
    return render(request, 'introduce.html')

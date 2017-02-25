@@ -1,10 +1,75 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>{% block title %}Second life{% endblock %}</title>
+ {% load staticfiles %}
+ {% load static %}
 
-{% block content %}
-{% load static %}
+   <meta name="keywords" content="django, ux, ui, startup, etc.">
 
-<body>
-    <!-- Carousel
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static "img/startup.png" %}">
+
+    <title>Second life's Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "dist/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{% static "assets/css/ie10-viewport-bug-workaround.css" %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+
+    <script src="{% static "assets/js/ie-emulation-modes-warning.js" %}"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <!-- Custom styles for this template -->
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}" />
+
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{% url 'home' %}">Second life</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'introduce' %}">Introduce</a></li>
+                <li><a href="{% url 'blog:index' %}">Post</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+
+     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -32,11 +97,10 @@
           <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>창업은 누구나 할 수 있습니다.</h1>
+              <h1>창업은 누구나 할 수 있습니다. </h1>
               <p>
-                 돈도 없고 사람도 없지만, 걱정 마세요. 혼자 하면 됩니다. </br>
-                 내가 아는 것, 내가 좋아하는 것으로부터 아이디어를 찾고 할 수 혼자서할 수 있는 것부터 하면 됩니다.</br>
-                 그렇게 차근차근 앞으로 나아가는 겁니다.</br>
+                내가 아는 것, 내가 좋아하는 것으로 부터 아이디어를 찾고 작은 것부터 시작하면 됩니다.</br>
+                그렇게 차근차근 앞으로 나아가는 겁니다. </br>
               </p>
             </div>
           </div>
@@ -47,8 +111,11 @@
             <div class="carousel-caption">
               <h1>실패를 두려워 하지 마세요.</h1>
               <p>
-                 모든 창업은 한 번에 성공하지 않습니다. 많은 실패가 쌓여 경험을 만들고 그 경험이 성공을 만드는 것입니다.
-                 아무것도 하지 않는 사람이 정말 실패자입니다. 우리의 인생은 도전입니다. 그러니 두려워하지 말고 도전하세요.
+                모든 창업은 한 번에 성공하지 않습니다.</br>
+                많은 실패가 쌓여 경험을 만들고 그 경험이 성공을 만드는 것입니다.</br>
+                아무것도 하지 않는 사람이 정말 실패자입니다.</br>
+                우리의 인생은 도전입니다.</br>
+                그러니 두려워하지 말고 도전하세요.</br>
               </p>
             </div>
           </div>
@@ -74,64 +141,56 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="{% static "img/script.png" %}" alt="Generic placeholder image" width="140" height="140">
           <h2>
             아이디어는 스토리가 됩니다.
           </h2>
           <p>
             당신의 생각을 정리하고 시장을 분석하여 어떠한 서비스로 만들지를 기획합니다.
           </p>
-          <p><a class="btn btn-default" href="{% url 'blog:index' %}" role="button">View details &raquo;</a></p>
+
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="{% static "img/blueprint.png" %}" alt="Generic placeholder image" width="140" height="140">
           <h2>
             아이디어 설계도를 만듭니다.
           </h2>
           <p>
             당신의 생각을 구체적으로, 자세하게 만들고 발전시키는 방법을 알려드립니다.
           </p>
-          <p><a class="btn btn-default" href="{% url 'blog:index' %}" role="button">View details &raquo;</a></p>
+
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="{% static "img/django.jpg" %}" alt="Generic placeholder image" width="140" height="140">
           <h2>
             아이디어는 현실이 됩니다.
           </h2>
           <p>
             설계도를 바탕으로 직접 구현하고 서비스를 실현합니다.
           </p>
-          <p><a class="btn btn-default" href="{% url 'blog:index' %}" role="button">View details &raquo;</a></p>
+
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
 
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p> &copy; Second life 2017 &middot; <a href="{% url 'home' %}">Privacy</a> &middot; <a href="#">Terms</a></p>
+      <footer class="blog-footer">
+      <p> &copy; Second life 2017 </p>
       </footer>
 
     </div><!-- /.container -->
 
-<!-- Bootstrap core JavaScript
+
+
+    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="{% static "assets/js/vendor/jquery.min.js" %}"><\/script>')</script>
+    <script src="{% static "dist/js/bootstrap.min.js" %}"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="{% static "assets/js/vendor/holder.min.js" %}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{% static "assets/js/ie10-viewport-bug-workaround.js" %}"></script>
-   <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="{% static "assets/js/ie10-viewport-bug-workaround.js" %}></script>
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-    {% endblock %}
   </body>
 </html>
