@@ -10,8 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
-import os
+from __future__ import absolute_import
 
+import os
+import tempfile
+
+import django
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
-    'tagging.apps.TaggingConfig',
     'ckeditor',
     'ckeditor_uploader',
     'disqus',
@@ -55,9 +58,6 @@ DISQUS_WEBSITE_SHORTNAME = 'django-glay'
 SITE_ID = 1
 
 ##ckeditor
-CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
-
 
 
 ##
@@ -151,6 +151,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+CKEDITOR_UPLOAD_PATH = os.path.join('media')
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+
+
 
 CKEDITOR_CONFIGS = {
     'default': {

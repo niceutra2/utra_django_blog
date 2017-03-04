@@ -25,6 +25,9 @@ urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^introduce/$', introduce, name = 'introduce'),
-]
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+ + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

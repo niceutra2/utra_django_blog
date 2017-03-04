@@ -1,17 +1,16 @@
+from __future__ import absolute_import
 from django.db import models
 from django.core.urlresolvers import reverse
-from tagging.fields import *
 from ckeditor.fields import RichTextField
-
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Post(models.Model):
-
     title = models.CharField('TITLE', max_length=50)
     slug = models.SlugField('SLUG', unique=True, allow_unicode=True, help_text='one word for title alias.')
-    content = RichTextField('CONTENT')
+    #content = RichTextField('CONTENT')
+    content = RichTextUploadingField()
     create_date =models.DateTimeField('Create Date', auto_now_add = True)
     modify_date = models.DateTimeField('Modify Date', auto_now = True)
-    tag =TagField()
 
     class Meta:
         verbose_name = 'post'
@@ -30,7 +29,4 @@ class Post(models.Model):
 
     def get_next_post(self):
         return self.get_next_by_modify_date()
-
-
-
 
