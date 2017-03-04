@@ -21,7 +21,7 @@ from my_blog.views import HomeView, introduce
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^tw_admin/', admin.site.urls),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^introduce/$', introduce, name = 'introduce'),
