@@ -25,12 +25,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8ttr5h)%41*i)v7#&5jub564)q+@y80bw_sbrkhjpa0h72i3$!'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -102,9 +102,9 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_blog',
-        'USER': 'niceutra2',
-        'PASSWORD': 'gjjs0511',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
