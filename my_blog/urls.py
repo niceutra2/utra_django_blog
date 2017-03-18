@@ -16,8 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
-from django.conf.urls.static import static
-from my_blog.views import HomeView, introduce
+from django.conf.urls.static import static, serve
+from my_blog.views import HomeView, introduce, media_redirect
 
 
 urlpatterns = [
@@ -26,9 +26,9 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^introduce/$', introduce, name = 'introduce'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, }),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
- + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
