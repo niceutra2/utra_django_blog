@@ -25,10 +25,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+
+SECRET_KEY = '8ttr5h)%41*i)v7#&5jub564)q+@y80bw_sbrkhjpa0h72i3$!'
+#SECRET_KEY = os.environ['SECRET_KEY']
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+#DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
 
 ALLOWED_HOSTS = ["*"]
 
@@ -85,6 +89,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #'django.contrib.staticfiles.storage.staticfiles_storage',
             ],
         },
     },
@@ -150,16 +155,27 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-CKEDITOR_UPLOAD_PATH = os.path.join('media')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'blog/static'),
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'templates'),
+]
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "my_blog_project/statics")
+MEDIA_ROOT =  os.path.join(BASE_DIR, "my_blog_project/media")
+CKEDITOR_UPLOAD_PATH = "upload/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
-
+#CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
+#CKEDITOR_RESTRICT_BY_USER = True
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 
 CKEDITOR_CONFIGS = {
     'default': {
+        'removePlugins': 'stylesheetparser',
         'toolbar': 'None',
     },
 }
