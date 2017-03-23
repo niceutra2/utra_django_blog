@@ -31,7 +31,7 @@ SECRET_KEY = '8ttr5h)%41*i)v7#&5jub564)q+@y80bw_sbrkhjpa0h72i3$!'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
 
 ALLOWED_HOSTS = ["*"]
@@ -108,9 +108,9 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_blog',
-        'USER': 'niceutra2',
-        'PASSWORD': 'gjjs0511',
-        'HOST': 'localhost',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
         'PORT': '3306',
         'OPTIONS': {'charset': 'utf8'},
     }
