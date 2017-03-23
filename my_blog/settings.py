@@ -31,7 +31,7 @@ SECRET_KEY = '8ttr5h)%41*i)v7#&5jub564)q+@y80bw_sbrkhjpa0h72i3$!'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
 
 ALLOWED_HOSTS = ["*"]
@@ -112,9 +112,10 @@ DATABASES = {
         'PASSWORD': 'gjjs0511',
         'HOST': 'localhost',
         'PORT': '3306',
+        'OPTIONS': {'charset': 'utf8'},
     }
 }
-
+#DATABASE_OPTIONS = {'charset': 'utf8'}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -138,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-KR'
 
 #TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Seoul'
