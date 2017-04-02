@@ -108,8 +108,8 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_blog',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'niceutra2',
+        'PASSWORD': 'gjjs0511',
         'HOST': '',
         'PORT': '3306',
         'OPTIONS': {'charset': 'utf8'},
@@ -163,6 +163,9 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "my_blog_project/statics")
 MEDIA_ROOT =  os.path.join(BASE_DIR, "my_blog_project/media")
+#STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "utra_django_blog/staticfiles")
+#MEDIA_ROOT =  os.path.join(os.path.dirname(BASE_DIR), "utra_django_blog/media")
+
 CKEDITOR_UPLOAD_PATH = "upload/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
