@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = '8ttr5h)%41*i)v7#&5jub564)q+@y80bw_sbrkhjpa0h72i3$!'
+SECRET_KEY = ''
 #SECRET_KEY = os.environ['SECRET_KEY']
 
 
@@ -108,8 +108,8 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_blog',
-        'USER': 'niceutra2',
-        'PASSWORD': 'gjjs0511',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '',
         'PORT': '3306',
         'OPTIONS': {'charset': 'utf8'},
