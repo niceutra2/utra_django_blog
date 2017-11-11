@@ -10,6 +10,12 @@ class Post(models.Model):
     content = RichTextUploadingField()
     create_date =models.DateTimeField('Create Date', auto_now_add = True)
     modify_date = models.DateTimeField('Modify Date', auto_now = True)
+    subtitle = (
+        ('Python', 'Python'),
+        ('Django', 'Django'),
+        ('Etc', 'Etc')
+    )
+    category = models.CharField('Category', max_length=6, choices=subtitle, default='Dj')
 
     class Meta:
         verbose_name = 'post'
@@ -24,8 +30,8 @@ class Post(models.Model):
         return reverse('blog:post_detail', args=(self.slug,))
 
     def get_previous_post(self):
-        return self.get_previous_by_modify_date()
+        return self.get_previous_by_create_date()
 
     def get_next_post(self):
-        return self.get_next_by_modify_date()
+        return self.get_next_by_create_date()
 

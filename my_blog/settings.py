@@ -26,8 +26,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = ''
-#SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'disqus',
     'django.contrib.sites',
-    'bootstrap3',
+
 
 ]
 
@@ -104,13 +104,11 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_blog',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'NAME': 'blog',#'django_blog',
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PW'],
+        'HOST': os.environ['HOST'],
         'PORT': '3306',
         'OPTIONS': {'charset': 'utf8'},
     }

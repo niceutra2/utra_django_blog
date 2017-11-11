@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 from my_blog import settings
 
 urlpatterns = [
-   url(r'^$', Post_LV.as_view(), name='index'),
+   url(r'^$', postlv, name='index'),
    url(r'^(?P<slug>\w+)/$', Post_DV.as_view(), name='post_detail'),
-
 ]

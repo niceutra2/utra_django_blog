@@ -7,7 +7,7 @@
     <div class="container">
       <div class="blog-header">
 
-        <h1 class="blog-title">{{ object.title }}</h1>
+        <h2 class="blog-title">[{{object.category}}]{{ object.title }}</h2>
         <p class="lead blog-description">{{ object.modify_date|date:"j F Y" }}</p>
       </div>
 
@@ -19,10 +19,10 @@
 
           <nav>
             <ul class="pager">
-              {% if object.get_previous_by_modify_date %}
+              {% if object.get_previous_by_create_date %}
               <li><a href="{{ object.get_previous_post.get_absolute_url }}">Previous</a></li>
               {% endif %}
-              {% if object.get_next_by_modify_date %}
+              {% if object.get_next_by_create_date %}
               <li><a href="{{ object.get_next_post.get_absolute_url }}">Next</a></li>
               {% endif %}
             </ul>
